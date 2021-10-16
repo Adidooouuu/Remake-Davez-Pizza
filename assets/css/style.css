@@ -1,0 +1,538 @@
+*, *::before, *::after
+{
+  margin : 0;
+  padding : 0;
+  box-sizing : border-box;
+}
+
+:root
+{
+  --main-color-dark : #000000;
+  --main-color-light : #FFFFFF;
+  --italia-color-one : #28A737;
+  --italia-color-two : #E30613;
+  --pop-color : #FFD600;
+  --over-dark-hover : #444444;
+  --light-dark : #EEEEEE;
+}
+
+/*General*/
+html
+{
+  scroll-behavior : smooth;
+}
+
+html, body
+{
+  min-width : 25.625rem;
+  width : 100%;
+  height : 100%;
+  margin: 0;
+  font-size : 1rem;
+  font-family : 'Roboto', Arial, sans-serif;
+}
+
+img
+{
+  display : block;
+  max-width : 100%;
+  height : auto;
+}
+
+li
+{
+  list-style : none inside;
+}
+
+*:hover
+{
+  transition : all 0.25s;
+}
+
+.bold
+{
+  font-weight : bold;
+}
+
+.hundred-percent
+{
+  width : 100%;
+  height : 100%;
+  margin : auto;
+}
+
+.heading
+{
+  margin-bottom : 1.5rem;
+  font-family: 'Dancing Script', cursive;
+  text-align : center;
+}
+
+.heading::before, .heading::after
+{
+  content : "-";
+  display : inline-block;
+}
+
+/*Button to go faster*/
+
+.down-button
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin : 1rem 0;
+}
+
+.reversed
+{
+  margin : 0;
+}
+
+.down-button-face
+{
+  content : "";
+  background : url(../images/arrow-no-hover.png);
+  background-size : contain;
+  filter : invert(1);
+  width : 4rem;
+  height : 4rem;
+  cursor : pointer;
+}
+
+.down-button-face:hover
+{
+  background : transparent url(../images/arrow-hover.png);
+  background-size : contain;
+  filter : invert(1);
+}
+
+.down-button-face:active
+{
+  background : transparent url(../images/arrow.png);
+  background-size : contain;
+  filter : invert(1);
+}
+
+.down-button-face-mirrored
+{
+  content : "";
+  background : url(../images/arrow-no-hover-mirrored.png);
+  background-size : contain;
+  filter : invert(1);
+  width : 4rem;
+  height : 4rem;
+  cursor : pointer;
+}
+
+.down-button-face-mirrored:hover
+{
+  background : transparent url(../images/arrow-hover-mirrored.png);
+  background-size : contain;
+  filter : invert(1);
+}
+
+.down-button-face-mirrored:active
+{
+  background : transparent url(../images/arrow-mirrored.png);
+  background-size : contain;
+  filter : invert(1);
+}
+
+.invert, .invert:hover, .invert:active
+{
+  filter : invert(0);
+}
+
+/*Big parts parameters*/
+
+.boxes, .flex, .flex-reverse, .height-correction, .grid-forced, .footer
+{
+  width : 100%;
+  height : calc(100% - 5.375rem);
+  padding-top : 5.375rem;
+}
+
+.boxes, .flex, .flex-reverse
+{
+  display : flex;
+  flex : 1;
+  align-items : center;
+  justify-content : center;
+}
+
+.intro
+{
+  animation : bg-header-ease-in-out 20s ease-in-out infinite both;
+  background-size : cover;
+}
+
+@keyframes bg-header-ease-in-out
+{
+  0%
+  {
+    background : black url(../images/feu-de-bois.jpg) no-repeat 50% 50%;
+  }
+
+  33.33%
+  {
+    background : black url(../images/pizza.jpg) no-repeat 50% 50%;
+  }
+
+  66.67%
+  {
+    background : black url(../images/panini.jpg) no-repeat 50% 50%;
+  }
+
+  100%
+  {
+    background : black url(../images/feu-de-bois.jpg) no-repeat 50% 50%;
+  }
+}
+
+.top-nav
+{
+  position : fixed;
+  width : 100%;
+  z-index : 1;
+}
+
+.top-nav, .ul-top-nav
+{
+  display : flex;
+  flex-flow : row wrap;
+  justify-content : space-between;
+}
+
+.ul-top-nav
+{
+  align-items : center;
+  justify-content : center;
+}
+
+.top-nav-link
+{
+  padding : 1rem;
+}
+
+.logo
+{
+  height : 5.3719rem;
+  padding : 1rem;
+}
+
+.login::before, .basket::before, .food-choice::before
+{
+  content : "";
+  display : inline-block;
+  filter : invert(1);
+  width : 2rem;
+  height : 2rem;
+  cursor : pointer;
+}
+
+.login::before
+{
+  background : transparent url(../images/login.png);
+  background-size : contain;
+}
+
+.basket::before
+{
+  background : transparent url(../images/basket.png);
+  background-size : contain;
+}
+
+.food-choice::before
+{
+  background : transparent url(../images/menu.png);
+  background-size : contain;
+}
+
+.boxes
+{
+  flex-flow : column nowrap;
+  padding-top : 5.371rem;
+}
+
+.box
+{
+  width : 24rem;
+  margin-top : 1.5rem;
+  padding : 2rem 2rem 1rem 2rem;
+  border-radius : 1rem;
+}
+
+.box-text
+{
+  margin-bottom : 1.5rem;
+}
+
+.box-button
+{
+  position: relative;
+  padding : 1rem 2rem;
+  text-align : center;
+  border-top : 1px solid var(--over-dark-hover);
+}
+
+.box-button-placing
+{
+  display : flex;
+  justify-content : center;
+}
+
+.spaced
+{
+  justify-content : space-between;
+}
+
+.box-button::after
+{
+  content : "";
+  position : absolute;
+  left : 0;
+  bottom : 0;
+  width : 0;
+  height : 2px;
+}
+
+.flex
+{
+  flex-flow : row wrap;
+}
+
+.flex-reverse
+{
+  flex-flow : row-reverse wrap;
+  max-width : 75rem;
+  margin : 0 auto;
+}
+
+.img-placing, .iframe-placing
+{
+  flex : 1 1 50%;
+}
+
+.qualities
+{
+  flex-basis : 50%;
+}
+
+.li-qualities-list
+{
+  display : flex;
+  flex-flow : column wrap;
+  align-items : center;
+}
+
+.li-qualities-list::before
+{
+  content : "";
+  display : inline-block;
+  width : 2rem;
+  height : 2rem;
+  margin : 0.7rem 0 0.3rem 0;
+}
+
+.artisan::before
+{
+  background : url(../images/artisanal.png);
+  background-size : contain;
+}
+
+.cuisson::before
+{
+  background : url(../images/four-a-bois.png);
+  background-size : contain;
+}
+
+.legumes::before
+{
+  background : url(../images/legume.png);
+  background-size : contain;
+}
+
+.ingredients::before
+{
+  background : url(../images/quality.png);
+  background-size : contain;
+}
+
+.respect::before
+{
+  background : url(../images/snowflake.png);
+  background-size : contain;
+}
+
+.maison::before
+{
+  background : url(../images/cooking.png);
+  background-size : contain;
+}
+
+.bg
+{
+  background : black url(../images/pizza-plate-bg.jpg) no-repeat 50% 50%;
+  background-size : cover;
+}
+
+.bgbis
+{
+  background : black url(../images/pizza2-bg.jpg) no-repeat 50% 50%;
+}
+
+.box-alone
+{
+  flex-basis : 50%;
+  height : auto;
+  padding : 2.5rem 4rem;
+}
+
+.margin
+{
+  margin-bottom : 4rem;
+}
+
+.grid-forced /*J'ai tenté le flex, rien ne fonctionnait convenablement, donc pour éviter des actes répréhensibles je passe par le grid :)*/
+{
+  display : grid;
+  grid-template-columns : repeat(3, 1fr);
+  grid-gap : 1rem;
+  padding : 0 2rem;
+}
+
+.box-avantages
+{
+  display : flex;
+  flex-direction : column;
+  justify-content: center;
+  align-items: center;
+  padding : 2rem;
+}
+
+.desktop-hidden
+{
+  display : none;
+}
+
+.footer-list, .column
+{
+  display : flex;
+  flex-flow : column nowrap;
+  flex : 1;
+  align-items : center;
+  justify-content : center;
+  flex-basis : 33%;
+  text-align : center;
+}
+
+.dev-identity
+{
+  text-align : center;
+}
+
+
+/*Colors*/
+
+.top-nav, .box, .box-alone, .box-avantages, .footer, .dev-identity
+{
+  background : var(--main-color-dark);
+  color : var(--main-color-light);
+}
+
+.top-nav a, .box-button, .footer-list a, .column a, .dev-identity a
+{
+  color : var(--main-color-light);
+  text-decoration : none;
+}
+
+a:hover
+{
+  text-decoration : underline;
+}
+
+.box-button:active
+{
+  background : var(--over-dark-hover);
+}
+
+.box-button::after
+{
+  background : var(--italia-color-two);
+  transition : width 500ms ease, background 1s ease;
+}
+
+.box-button:hover::after
+{
+  width : 50%;
+  background : var(--pop-color);
+}
+
+.box-button:hover::after
+{
+  width : 100%;
+  background : var(--italia-color-one);
+}
+
+.heading::before
+{
+  color : var(--italia-color-one);
+}
+
+.heading::after
+{
+  color : var(--italia-color-two);
+}
+
+@media screen and (max-width : 50rem)
+{
+  .top-nav-link-text
+  {
+    display : none;
+  }
+
+  .box-alone
+  {
+    flex-basis : 60%;
+  }
+
+  .mobile-hidden
+  {
+    display : none;
+  }
+
+  .desktop-hidden
+  {
+    display : block;
+  }
+
+  .margin
+  {
+    margin-bottom : 1rem;
+  }
+
+  .grid-forced /*J'ai tenté le flex, rien ne fonctionnait convenablement, donc pour éviter des actes répréhensibles je passe par le grid :)*/
+  {
+    grid-template-columns : repeat(2, 1fr);
+    padding : 0 1rem;
+  }
+
+  .box-avantages
+  {
+    padding : 2rem;
+  }
+}
+
+@media screen and (max-width : 30rem)
+{
+  .flex, .flex-reverse
+  {
+    flex-flow : column nowrap;
+  }
+
+  .box-avantages
+  {
+    padding : 1rem;
+  }
+}
